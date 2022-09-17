@@ -1,0 +1,18 @@
+name: 'CloudFormation Template Validation'
+description: 'Uses aws cli on the runner to validate cloudformation templates in the repository'
+
+inputs:
+  template:
+    description: 'CloudFormation template file'
+    required: true
+  region:
+    description: 'AWS region to use in the aws cli'
+    required: false
+    default: 'us-west-2'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.template }}
+    - ${{ inputs.region }}
