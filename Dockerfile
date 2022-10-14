@@ -4,8 +4,7 @@ RUN apk -v --no-cache --update add \
         gcc \
         python3 \
         python3-dev \
-        libevent-dev \
-        gevent
+        libevent-dev 
 RUN python3 -m ensurepip --upgrade \
         && pip3 install --upgrade pip
 RUN pip3 install --upgrade awscli aws-sam-cli
