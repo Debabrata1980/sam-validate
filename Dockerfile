@@ -3,7 +3,8 @@ RUN apk -v --no-cache --update add \
         musl-dev \
         gcc \
         python3 \
-        python3-dev
+        python3-dev \
+        libevent-dev
 RUN python3 -m ensurepip --upgrade \
         && pip3 install --upgrade pip
 RUN pip3 install --upgrade awscli aws-sam-cli
